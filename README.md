@@ -1,50 +1,47 @@
-# Welcome to your Expo app 👋
+# Monova assignment (Expo + React Native Web)
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A pixel-faithful recreation of the UI/interaction flow from the provided reference video.  
+Built using Expo (React Native Web) with TypeScript.  
 
-## Get started
+🔗 **Snack Demo**: [Open in Snack](https://snack.expo.dev/@hari291427/monova-assignment)  
+---
 
-1. Install dependencies
+## 🚀 How to Run
 
-   ```bash
-   npm install
-   ```
+### Run in Snack (Web)
+1. Open the [Snack link](https://snack.expo.dev/@hari291427/monova-assignment)
+2. Select **Web** preview (right pane).
+3. Interact with filters, chips and scrollbar.
 
-2. Start the app
+### What I Replicated
 
-   ```bash
-   npx expo start
-   ```
+1. Items Preview
+2. Grid of items with image, category, color, style badges.
+3. Filter chips and active-filter pills (update in real time).
+4. Empty/loading placeholders.
+5. Outfit & Collections
+6. Scrollable cards.
+7. Animations
+8. Micro-interactions on filter chip toggles.
 
-In the output, you'll find options to open the app in a
+### Component Structure & State Management
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+/components
+    - SearchBar.tsx       → Search field UI
+    - OutfitCard.tsx      → Single outfit/item card
+    - OutfitList.tsx      → Grid/scrollable list
+    - FilterChips.tsx     → Toggle filters
+  /utils
+    - constants.ts          Mocked data (10–30 items)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Assumptions & Limitations
 
-## Get a fresh project
+1. All data is mocked in constants.ts.
+2. Backend logic (real API, auth, etc.) not implemented.
+3. Video reference animations replicated to ~90% fidelity (some platform differences on web).
 
-When you're ready, run:
+### Animations & Interactions Implemented
 
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Springy card entry (react-native-reanimated / RN Animated API).
+2. Filter chips with subtle scale animation on press.
+3. Pressable areas ≥44px for accessibility.
